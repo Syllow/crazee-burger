@@ -18,8 +18,8 @@ const LoginPageStyled = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-image: url('/images/burger-background.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('/images/burger-background.jpg');
   background-size: cover;
   background-position: center;
-  background-blend-mode: darken;
 `;
