@@ -4,7 +4,7 @@ import { IoChevronForward } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { theme } from '../../../theme/index.ts';
-import TextInput from './TextInput.tsx';
+import TextInput from '../../reusable-ui/TextInput.tsx';
 
 export default function LoginForm() {
   const [inputValue, setInputValue] = useState('');

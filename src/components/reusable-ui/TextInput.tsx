@@ -1,7 +1,7 @@
 import { IconType } from 'react-icons';
 import styled from 'styled-components';
 
-import { theme } from '../../../theme/index.ts';
+import { theme } from '../../theme/index.ts';
 
 type PropsType = {
   value: string;
@@ -27,20 +27,20 @@ export default function TextInput({
 
 const InputStyled = styled.div`
   background-color: ${theme.colors.white};
-  border-radius: 5px;
+  border-radius: ${theme.borderRadius.round};
   display: flex;
   align-items: center;
   padding: 18px 24px;
   margin: 18px 0;
 
   .icon {
-    font-size: 15px;
+    font-size: ${theme.fonts.P0};
     color: ${theme.colors.greySemiDark};
     margin-right: 8px;
   }
   input {
     border: none;
-    font-size: 15px;
+    font-size: ${theme.fonts.P0};
     color: ${theme.colors.dark};
     width: 100%;
   }

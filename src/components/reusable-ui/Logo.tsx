@@ -19,7 +19,7 @@ const LogoStyled = styled.div`
     display: inline;
     font-family: 'Amatic SC', sans-serif;
     font-size: 90px; // 36
-    font-weight: 700;
+    font-weight: ${theme.weights.bold};
     color: ${theme.colors.primary};
     letter-spacing: 1.5px;
   }
