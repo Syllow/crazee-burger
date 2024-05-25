@@ -4,6 +4,7 @@ import { IoChevronForward } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { theme } from '../../../theme/index.ts';
+import PrimaryButton from '../../reusable-ui/PrimaryButton.tsx';
 import TextInput from '../../reusable-ui/TextInput.tsx';
 
 export default function LoginForm() {
@@ -34,10 +35,7 @@ export default function LoginForm() {
         required
       />
 
-      <button className='button-with-icon'>
-        <span>Accéder à mon espace</span>
-        <IoChevronForward className='icon' />
-      </button>
+      <PrimaryButton label='Accéder à mon espace' Icon={IoChevronForward} />
     </LoginFormStyled>
   );
 }
@@ -63,43 +61,6 @@ const LoginFormStyled = styled.form`
     color: ${theme.colors.white};
     font-size: 36px;
     margin: 24px 12px 12px;
-  }
-
-  .button-with-icon {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.primary_burger};
-    padding: 18px 24px;
-    font-size: 16px;
-    font-weight: 800;
-    border-radius: 5px;
-    border: 1px solid ${theme.colors.primary_burger};
-    white-space: nowrap;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &:hover:not(:disabled) {
-      color: ${theme.colors.primary_burger};
-      background-color: ${theme.colors.white};
-      border: 1px solid ${theme.colors.white};
-      transition: all 200ms ease-out;
-    }
-
-    &:active {
-      color: ${theme.colors.white};
-      background-color: ${theme.colors.primary_burger};
-      border: 1px solid ${theme.colors.white};
-    }
-
-    &:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-
-    .icon {
-      font-size: 16px;
-      margin-left: 10px;
-    }
   }
 `;
 
