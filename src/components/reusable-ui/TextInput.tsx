@@ -1,12 +1,12 @@
-import { IconType } from 'react-icons';
 import styled from 'styled-components';
 
+import { ReactNode } from 'react';
 import { theme } from '../../theme/index.ts';
 
 type PropsType = {
   value: string;
   onChange(event: React.ChangeEvent<HTMLInputElement>): void;
-  Icon: IconType;
+  Icon: ReactNode;
   placeholder?: string;
   required?: boolean;
 };
@@ -19,7 +19,7 @@ export default function TextInput({
 }: PropsType) {
   return (
     <InputStyled>
-      <Icon className='icon' />
+      {Icon && Icon}
       <input value={value} onChange={onChange} type='text' {...otherProps} />
     </InputStyled>
   );
@@ -33,11 +33,6 @@ const InputStyled = styled.div`
   padding: 18px 24px;
   margin: 18px 0;
 
-  .icon {
-    font-size: ${theme.fonts.P0};
-    color: ${theme.colors.greySemiDark};
-    margin-right: 8px;
-  }
   input {
     border: none;
     font-size: ${theme.fonts.P0};

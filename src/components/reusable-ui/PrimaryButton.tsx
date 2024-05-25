@@ -1,17 +1,17 @@
-import { IconType } from 'react-icons';
+import { ReactNode } from 'react';
 import styled from 'styled-components';
 import { theme } from '../../theme';
 
 type PropsType = {
   label: string;
-  Icon?: IconType;
+  Icon?: ReactNode;
 };
 
 export default function PrimaryButton({ label, Icon }: PropsType) {
   return (
     <ButtonStyled>
       <span>{label}</span>
-      {Icon && <Icon className='icon' />}
+      {Icon && Icon}
     </ButtonStyled>
   );
 }
@@ -45,10 +45,5 @@ const ButtonStyled = styled.button`
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
-  }
-
-  .icon {
-    font-size: 16px;
-    margin-left: 10px;
   }
 `;
