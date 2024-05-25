@@ -53,7 +53,7 @@ const LoginFormStyled = styled.form`
 
   h1 {
     color: ${theme.colors.white};
-    font-size: 48px;
+    font-size: ${theme.fonts.size.P5};
     margin-bottom: 24px;
   }
   hr {
@@ -62,12 +62,12 @@ const LoginFormStyled = styled.form`
   }
   h2 {
     color: ${theme.colors.white};
-    font-size: 36px;
+    font-size: ${theme.fonts.size.P4};
     margin: 24px 12px 12px;
   }
 
   .text-input-icon {
-    font-size: ${theme.fonts.P0};
+    font-size: ${theme.fonts.size.P1};
     color: ${theme.colors.greySemiDark};
     margin-right: 8px;
   }

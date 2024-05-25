@@ -35,7 +35,7 @@ const InputStyled = styled.div`
 
   input {
     border: none;
-    font-size: ${theme.fonts.P0};
+    font-size: ${theme.fonts.size.P0};
     color: ${theme.colors.dark};
     width: 100%;
   }
