@@ -5,7 +5,7 @@ import Logo from '../../reusable-ui/Logo';
 export default function LoginPage() {
   return (
     <LoginPageStyled>
-      <Logo />
+      <Logo className='logo' />
       <LoginForm />
     </LoginPageStyled>
   );
@@ -22,4 +22,8 @@ const LoginPageStyled = styled.div`
     url('/images/burger-background.jpg');
   background-size: cover;
   background-position: center;
+
+  .logo {
+    transform: scale(2.5);
+  }
 `;
