@@ -5,11 +5,12 @@ import { theme } from '../../theme';
 type PropsType = {
   label: string;
   Icon?: ReactNode;
+  className?: string;
 };
 
-export default function PrimaryButton({ label, Icon }: PropsType) {
+export default function PrimaryButton({ label, Icon, className }: PropsType) {
   return (
-    <ButtonStyled>
+    <ButtonStyled className={className}>
       <span>{label}</span>
       {Icon && Icon}
     </ButtonStyled>

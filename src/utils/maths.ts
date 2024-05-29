@@ -1,4 +1,4 @@
-export function formatPrice(priceToFormat) {
+export function formatPrice(priceToFormat: number): string {
   let price = priceToFormat;
 
   // @TODO: perhaps change this to if(!price) return 0
