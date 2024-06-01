@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { theme } from '../../../../theme';
-import PrimaryButton from '../../../reusable-ui/PrimaryButton';
 import { formatPrice } from '../../../../utils/maths';
 import formatText from '../../../../utils/text';
+import PrimaryButton from '../../../reusable-ui/PrimaryButton';
 
 type PropsType = {
   id: number;
