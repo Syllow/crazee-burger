@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 import { theme } from '../../../../../theme';
 
-export default function AdminPanel() {
-  return <AdminPanelStyled>AdminPanel</AdminPanelStyled>;
+type PropType = {
+  actif: number;
+};
+
+export default function AdminPanel({ actif }: PropType) {
+  return <AdminPanelStyled>AdminPanel {actif}</AdminPanelStyled>;
 }
 
 const AdminPanelStyled = styled.div`

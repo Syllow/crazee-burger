@@ -4,11 +4,12 @@ import AdminPanel from './AdminPanel';
 import AdminTabs from './AdminTabs';
 
 export default function Admin() {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [actif, setActif] = useState(1);
+
   return (
     <AdminStyled>
-      <AdminTabs isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
-      {!isCollapsed && <AdminPanel />}
+      <AdminTabs actif={actif} setActif={setActif} />
+      {actif !== 0 && <AdminPanel actif={actif} />}
     </AdminStyled>
   );
 }

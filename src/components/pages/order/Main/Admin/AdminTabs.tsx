@@ -7,50 +7,44 @@ import { useState } from 'react';
 import { MdModeEditOutline } from 'react-icons/md';
 
 type PropsType = {
-  isCollapsed: boolean;
-  setIsCollapsed: React.Dispatch<React.SetStateAction<boolean>>;
+  actif: number;
+  setActif: React.Dispatch<React.SetStateAction<number>>;
 };
 
-export default function AdminTabs({ isCollapsed, setIsCollapsed }: PropsType) {
-  const [isEditSelected, setIsEditSelected] = useState(false);
-  const [isAddSelected, setIsAddSelected] = useState(true);
+export default function AdminTabs({ actif, setActif }: PropsType) {
+  const [old, setOld] = useState(1);
 
-  const selectCollapse = () => {
-    setIsCollapsed(!isCollapsed);
-    setIsEditSelected(false);
-    setIsAddSelected(false);
-  };
-
-  const selectEditTab = () => {
-    setIsCollapsed(false);
-    setIsEditSelected(true);
-    setIsAddSelected(false);
-  };
-
-  const selectAddTab = () => {
-    setIsCollapsed(false);
-    setIsEditSelected(false);
-    setIsAddSelected(true);
+  const collapse = () => {
+    if (actif === 0) setActif(old);
+    else {
+      setOld(actif);
+      setActif(0);
+    }
   };
 
   return (
     <AdminTabsStyled>
       <Tab
-        Icon={isCollapsed ? <FiChevronUp /> : <FiChevronDown />}
-        onClick={selectCollapse}
-        className={isCollapsed ? 'is-active' : ''}
+        label=''
+        Icon={actif === 0 ? <FiChevronUp /> : <FiChevronDown />}
+        onClick={collapse}
+        className={actif === 0 ? 'is-active' : ''}
       />
       <Tab
         label='Ajouter un produit'
         Icon={<AiOutlinePlus />}
-        onClick={selectAddTab}
-        className={isAddSelected ? 'is-active' : ''}
+        onClick={() => {
+          setActif(1);
+        }}
+        className={actif === 1 ? 'is-active' : ''}
       />
       <Tab
         label='Modifier un produit'
         Icon={<MdModeEditOutline />}
-        onClick={selectEditTab}
-        className={isEditSelected ? 'is-active' : ''}
+        onClick={() => {
+          setActif(2);
+        }}
+        className={actif === 2 ? 'is-active' : ''}
       />
     </AdminTabsStyled>
   );
